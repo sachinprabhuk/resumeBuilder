@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link  rel="stylesheet" href="/resumeapp/lib/bootstrap/css/bootstrap.min.css" />
+    <title>Resume Builder | Signup</title>
+</head>
+<body class="container-fluid d-flex align-items-center" style="height: 100vh;">
+    <form id="signupform" class="col-sm-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
+        <h2 class="text-center">Sign Up</h2>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" class="form-control" id="email" />
+        </div>
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="text" class="form-control" id="password" />
+        </div>
+        <p class="text-danger" id="error-msg"></p>
+        <button type="submit" class="btn btn-primary btn-block">Sign up</button>    
+        <br/>
+        <p class="text-center">
+            Already have an account ? 
+            <a href="/resumeapp/login">Login</a>
+        </p>
+    </form>    
+</body>
+<script>
+    const signupform = document.querySelector("#signupform");
+    const errorMsg = document.querySelector("#error-msg");
+
+    signupform.addEventListener("submit", e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("email", e.currentTarget["email"].value);
+        formData.append("password", e.currentTarget["password"].value);
+        fetch("/resumeapp/php/signup.php", {
+            method: "post",
+            body: formData,
+        })
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            if(data.success)
+                window.location.href = "/resumeapp/home";
+            else
+                errorMsg.innerHTML = data.message || "Ooops!!something went wrong!";
+        })
+        .catch(console.log);
+    })
+</script>
+</html>
