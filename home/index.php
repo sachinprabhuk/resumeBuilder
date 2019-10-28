@@ -11,7 +11,7 @@
 </head>
 <body class="bg-light" >
     <?php 
-        if(!isset($_COOKIE["user"]) or $_COOKIE["user"] != "token") {
+        if(!isset($_COOKIE["user"])) {
             header("Location: /resumeapp/login");
             exit;
         }

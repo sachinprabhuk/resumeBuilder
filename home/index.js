@@ -124,14 +124,19 @@ submit.addEventListener("click", e => {
 
     fetch("/resumeapp/php/addInfo.php", {
         method: "POST",
-        body: JSON.stringify(data)
+        body: data
     })
     .then(data => data.json())
     .then(data => {
-        if(data.success)
-            window.location = "/resumeapp/templates";
-        else
-            console.log("heyyy error");
+        console.log(data);
+        // if(data.auth===false)
+        //     window.location.replace("/resumeapp/login");
+        // else if(data.success===true){
+        //     console.log("going to templates");
+        //     window.location = "/resumeapp/templates";
+        // }
+        // else
+        //     console.log("heyyy error");
     })
     .catch(err => {
         console.log(err);
