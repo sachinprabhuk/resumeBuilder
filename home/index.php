@@ -25,29 +25,44 @@
 
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                <a 
+                id="pill-personal"
+                class="nav-link active" data-toggle="tab" href="#tab-personal">
                     Personal info
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                <a 
+                id="pill-education"
+                class="nav-link" data-toggle="tab" href="#tab-education">
                     Education
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+            <li class="nav-item" >
+                <a 
+                id="pill-projects"
+                class="nav-link" data-toggle="tab" href="#tab-projects">
                     Projects
                 </a>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    heyyyyy
+            <div class="tab-pane fade show active row" id="tab-personal" >
+                <?php include("./peronalinfo.html"); ?>
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                helloooooooooooooooo
+            <div class="tab-pane fade" id="tab-education">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="add-new-education">Add new</button>
+                    </div>
+                </div>
+                <br />
+                <form id="form-education" class="row container">
+                </form>
+                <br />
+                <button id="education-next" class="btn btn-primary">Next</button>
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="tab-pane fade" id="tab-projects">
                 waddadfasdf
             </div>
         </div>
@@ -58,5 +73,6 @@
 <script src="/resumeapp/lib/js/jquery-3.4.1.min.js"></script>
 <script src="/resumeapp/lib/js/popper.min.js"></script>
 <script src="/resumeapp/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./index.js"></script>
 
 </html>
