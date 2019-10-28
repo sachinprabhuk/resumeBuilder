@@ -20,6 +20,9 @@
         <span class="navbar-brand mb-0 h1 text-white">
             Resume Builder
         </span>
+        <button id="log-out" class="btn btn-primary">
+           Log out
+        </button>
     </nav>
     <div class="container" style="background-color: #efefff;padding-top: 15px;min-height: 90vh">
 

@@ -3,6 +3,8 @@ const addEducation = document.querySelector("#add-new-education");
 const educationForm = document.querySelector("#form-education");
 const personalForm = document.querySelector("#form-personal");
 const projectsForm = document.querySelector("#form-project");
+const logout = document.querySelector("#log-out");
+
 
 let id = 0;
 const addEducationCard = () => {
@@ -38,6 +40,10 @@ const addEducationCard = () => {
 
 addEducationCard();
 addEducation.addEventListener("click", addEducationCard);
+
+logout.addEventListener("click", ()=>{
+    window.location.replace("/resumeapp/login");
+});
 
 
 
