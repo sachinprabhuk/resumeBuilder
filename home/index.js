@@ -11,7 +11,7 @@ const addEducationCard = () => {
             <div class="card-body">
                 <div class="form-group">
                     <small for="insititution">institution</small>
-                    <input type="text" class="form-control form-control-sm" classs="insititution">
+                    <input type="text" class="form-control form-control-sm" class="insititution">
                 </div>
                 <div class="form-group">
                 <small for="descrip">description</small>
