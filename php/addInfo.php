@@ -24,11 +24,9 @@
             }else
                 $resp = array("success" => false, "message" => $conn->error);
             }          
-        }
+    }
     
 
-    
-    
     if(!isset($_COOKIE["user"])) {
         $resp = array("success" => false, "message"=>"", "auth"=> false);
         exit;

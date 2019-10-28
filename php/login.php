@@ -1,4 +1,6 @@
 <?php
+
+   
     
     header('Content-Type: application/json');
     
@@ -15,12 +17,15 @@
         ."';";
         $result = $conn->query($query);
         if($result->num_rows > 0) {
-            setcookie("user", $_POST['email'], time() + (86400*2), "/");
+            $email = $_POST['email'];
+            setcookie("user", $email, time() + (86400*2), "/");
             $resp = array("success" => true, "message" => "");
         }else
             $resp = array("success" => false, "message" => "invalid username or passwrod");
     }
     
+    //send data from here//
+
     echo json_encode($resp);
 
 ?>

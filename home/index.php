@@ -11,10 +11,12 @@
 </head>
 <body class="bg-light" >
     <?php 
+        
         if(!isset($_COOKIE["user"])) {
             header("Location: /resumeapp/login");
             exit;
         }
+        
     ?>
     <nav class="navbar navbar-light bg-primary">
         <span class="navbar-brand mb-0 h1 text-white">
@@ -88,5 +90,7 @@
 <script src="/resumeapp/lib/js/popper.min.js"></script>
 <script src="/resumeapp/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./index.js"></script>
+<script src="./education.js"></script>
 <script src="./project.js"></script>
+<script src="./fetch-data.js"></script>
 </html>
