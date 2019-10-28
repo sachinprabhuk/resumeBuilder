@@ -14,7 +14,7 @@
         .$_POST["password"]
         ."');";
         if($conn->query($query) === TRUE) {
-            setcookie("user", "token", time() + (86400*2), "/");
+            setcookie("user", $_POST['email'], time() + (86400*2), "/");
             $resp = array("success" => true, "message" => "");
         }else
             $resp = array("success" => false, "message" => "Oops! Something went wrong!");

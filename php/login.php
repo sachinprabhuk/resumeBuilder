@@ -15,7 +15,7 @@
         ."';";
         $result = $conn->query($query);
         if($result->num_rows > 0) {
-            setcookie("user", "token", time() + (86400*2), "/");
+            setcookie("user", $_POST['email'], time() + (86400*2), "/");
             $resp = array("success" => true, "message" => "");
         }else
             $resp = array("success" => false, "message" => "invalid username or passwrod");

@@ -86,5 +86,4 @@
 <script src="/resumeapp/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./index.js"></script>
 <script src="./project.js"></script>
-
 </html>
