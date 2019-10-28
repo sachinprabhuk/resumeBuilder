@@ -63,7 +63,7 @@
                 <button id="education-next" class="btn btn-primary">Next</button>
             </div>
             <div class="tab-pane fade" id="tab-projects">
-                waddadfasdf
+                <button class="btn btn-primary" id="final-submit">Submit</button>
             </div>
         </div>
     </div>

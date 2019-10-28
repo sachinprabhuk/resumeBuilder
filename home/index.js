@@ -1,6 +1,8 @@
 const personalNext = document.querySelector("#personal-next");
 const addEducation = document.querySelector("#add-new-education");
 const educationForm = document.querySelector("#form-education");
+const personalForm = document.querySelector("#form-personal");
+const projectsForm = document.querySelector("#form-projects");
 
 let id = 0;
 const addEducationCard = () => {
@@ -11,11 +13,11 @@ const addEducationCard = () => {
             <div class="card-body">
                 <div class="form-group">
                     <small for="insititution">institution</small>
-                    <input type="text" class="form-control form-control-sm" classs="insititution">
+                    <input type="text" class="form-control form-control-sm institution">
                 </div>
                 <div class="form-group">
                 <small for="descrip">description</small>
-                <input type="password" class="form-control form-control-sm" class="description">
+                <input type="text" class="form-control form-control-sm description">
                 </div>     
                 <div class="form-group">
                     <small>year of study</small>
@@ -79,3 +81,32 @@ educationNext.addEventListener("click", e => {
     tabOrgnization.projects.tab.classList.add("active");
     tabOrgnization.projects.tab.classList.add("show");  
 })
+
+
+
+
+const submit = document.querySelector("#final-submit");
+
+submit.addEventListener("click", e => {
+    // personal
+    const fname = personalForm["firstname"].value;
+    const lname = personalForm["lastname"].value;
+    const contact = personalForm["contact"].value;
+    const description = personalForm["description"].value;
+
+    // education
+    const insititutions = Array.from(educationForm.querySelectorAll(".card"))
+        .reduce((acc, curr, i) => {
+        acc.push({
+            name: curr.querySelector(".institution").value,
+            description: curr.querySelector(".description").value
+        });
+        return acc;
+    }, []);
+    console.log(insititutions);
+    
+
+    console.log(fname, lname, contact, description)
+
+
+});
