@@ -95,7 +95,7 @@ submit.addEventListener("click", e => {
     const description = personalForm["description"].value;
 
     // education
-    const insititutions = Array.from(educationForm.querySelectorAll(".card"))
+    let insititutions = Array.from(educationForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
         acc.push({
             name: curr.querySelector(".institution").value,
@@ -104,8 +104,10 @@ submit.addEventListener("click", e => {
         return acc;
     }, []);
 
+    insititutions = JSON.stringify(insititutions);
+   
     // projects
-    const projects = Array.from(projectsForm.querySelectorAll(".card"))
+    let projects = Array.from(projectsForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
         acc.push({
             name: curr.querySelector(".projectTitle").value,
@@ -113,6 +115,8 @@ submit.addEventListener("click", e => {
         });
         return acc;
     }, []);
+
+    projects = JSON.stringify(projects);
 
     const data = new FormData();
     data.append("fname", fname);
@@ -122,21 +126,24 @@ submit.addEventListener("click", e => {
     data.append("institutions", insititutions);
     data.append("projects", projects);
 
+    for (var value of data.values()) {
+        console.log(value); 
+     }
     fetch("/resumeapp/php/addInfo.php", {
         method: "POST",
         body: data
     })
-    .then(data => data.text())
+    .then(data => data.json())
     .then(data => {
         console.log(data);
-        // if(data.auth===false)
-        //     window.location.replace("/resumeapp/login");
-        // else if(data.success===true){
-        //     console.log("going to templates");
-        //     window.location = "/resumeapp/templates";
-        // }
-        // else
-        //     console.log("heyyy error");
+        if(data.auth===false)
+            window.location.replace("/resumeapp/login");
+        else if(data.success===true){
+            console.log("going to templates");
+            window.location = "/resumeapp/templates";
+        }
+        else
+            console.log("heyyy error");
     })
     .catch(err => {
         console.log(err);

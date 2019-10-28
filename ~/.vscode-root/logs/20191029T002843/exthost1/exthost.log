@@ -8,3 +8,21 @@
 [2019-10-29 00:29:04.995] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
 [2019-10-29 00:29:04.996] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
 [2019-10-29 00:29:05.074] [exthost] [info] eager extensions activated
+[2019-10-29 00:30:10.349] [exthost] [info] ExtensionService#_doActivateExtension vscode.php-language-features {"startup":false,"activationEvent":"onLanguage:php"}
+[2019-10-29 00:30:10.350] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/php-language-features/dist/phpMain
+[2019-10-29 00:30:14.249] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2019-10-29 00:30:14.249] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-10-29 00:31:19.112] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2019-10-29 00:31:19.113] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/extension-editing/dist/extension
+[2019-10-29 01:27:14.814] [exthost] [error] [vscode.typescript-language-features] provider FAILED
+[2019-10-29 01:27:14.835] [exthost] [error] Error: DisposableStore is missing...
+	at R._convertCompletionItem (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:660)
+	at define.resolveCompletionItem.o.asPromise.then.e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:290)
+[2019-10-29 01:27:22.725] [exthost] [error] [vscode.typescript-language-features] provider FAILED
+[2019-10-29 01:27:22.726] [exthost] [error] Error: DisposableStore is missing...
+	at R._convertCompletionItem (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:660)
+	at define.resolveCompletionItem.o.asPromise.then.e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:290)
+[2019-10-29 01:27:31.930] [exthost] [error] [vscode.typescript-language-features] provider FAILED
+[2019-10-29 01:27:31.949] [exthost] [error] Error: DisposableStore is missing...
+	at R._convertCompletionItem (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:660)
+	at define.resolveCompletionItem.o.asPromise.then.e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:559:290)

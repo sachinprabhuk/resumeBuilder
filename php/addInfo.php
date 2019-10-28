@@ -1,10 +1,39 @@
 <?php
+    
+    function insertEducation($email, $data, $conn){
+        $institution_array = json_decode( stripslashes($data), TRUE);
+        foreach($institution_array as $ey=>$currentData){
+            $name= str_replace('"', '', $currentData["name"]);
+            $description= str_replace('"', '', $currentData["description"]);
+            $query= "INSERT INTO education VALUES('$email', '$name', '$description', '2019', '2019')";
+            if($conn->query($query)===TRUE){
+                $resp = array("success" => true, "message" => "");
+            }else
+                $resp = array("success" => false, "message" => $conn->error);
+        }          
+    }
 
+    function insertProject($email, $data, $conn){
+        $institution_array = json_decode( stripslashes($data), TRUE);
+        foreach($institution_array as $ey=>$currentData){
+            $name= str_replace('"', '', $currentData["name"]);
+            $description= str_replace('"', '', $currentData["description"]);
+            $query= "INSERT INTO projects VALUES('$email', '$name', '$description')";
+            if($conn->query($query)===TRUE){
+                $resp = array("success" => true, "message" => "");
+            }else
+                $resp = array("success" => false, "message" => $conn->error);
+            }          
+        }
+    
 
+    
+    
     if(!isset($_COOKIE["user"])) {
         $resp = array("success" => false, "message"=>"", "auth"=> false);
         exit;
     }
+
     $conn = new mysqli("localhost","root","", "resumeapp");
 
     
@@ -30,28 +59,12 @@
     }else
         $resp = array("success" => false, "message" => $conn->error);
 
-    $institution= $_POST['institutions'];
-    echo json_encode($institution);
-    $institution_array = json_decode( stripslashes($institution), TRUE);
-    echo json_encode($institution_array);
-    exit;
+    
+    
+    insertEducation($email, $_POST['institutions'], $conn);  
+    
+    insertProject($email, $_POST['projects'], $conn);
 
-    foreach($institution_array as $ey=>$currentData){
-        $name= $currentData["name"];
-        $description= $currentData["description"];
-        $query= "INSERT INTO education VALUES('$email', '$name', '$description', '$descr', '$contact')";
-        if($conn->query($query)===TRUE){
-            $resp = array("success" => true, "message" => "");
-        }else
-            $resp = array("success" => false, "message" => $conn->error);
-    }            
-    /*        
-    $query= "INSERT INTO personal VALUES('$email', '$fname', '$lname', '$descr', '$contact')";
-    if($conn->query($query)===TRUE){
-        $resp = array("success" => true, "message" => "");
-    }else
-        $resp = array("success" => false, "message" => $conn->error);    
-    */
     echo json_encode($resp);
    
 
