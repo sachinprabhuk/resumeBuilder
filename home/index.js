@@ -1,6 +1,8 @@
 const personalNext = document.querySelector("#personal-next");
 const addEducation = document.querySelector("#add-new-education");
 const educationForm = document.querySelector("#form-education");
+const personalForm = document.querySelector("#form-personal");
+const projectsForm = document.querySelector("#form-project");
 
 let id = 0;
 const addEducationCard = () => {
@@ -11,11 +13,11 @@ const addEducationCard = () => {
             <div class="card-body">
                 <div class="form-group">
                     <small for="insititution">institution</small>
-                    <input type="text" class="form-control form-control-sm" class="insititution">
+                    <input type="text" class="form-control form-control-sm institution">
                 </div>
                 <div class="form-group">
                 <small for="descrip">description</small>
-                <input type="password" class="form-control form-control-sm" class="description">
+                <input type="text" class="form-control form-control-sm description">
                 </div>     
                 <div class="form-group">
                     <small>year of study</small>
@@ -79,3 +81,61 @@ educationNext.addEventListener("click", e => {
     tabOrgnization.projects.tab.classList.add("active");
     tabOrgnization.projects.tab.classList.add("show");  
 })
+
+
+
+
+const submit = document.querySelector("#final-submit");
+
+submit.addEventListener("click", e => {
+    // personal
+    const fname = personalForm["firstname"].value;
+    const lname = personalForm["lastname"].value;
+    const contact = personalForm["contact"].value;
+    const description = personalForm["description"].value;
+
+    // education
+    const insititutions = Array.from(educationForm.querySelectorAll(".card"))
+        .reduce((acc, curr, i) => {
+        acc.push({
+            name: curr.querySelector(".institution").value,
+            description: curr.querySelector(".description").value
+        });
+        return acc;
+    }, []);
+
+    // projects
+    const projects = Array.from(projectsForm.querySelectorAll(".card"))
+        .reduce((acc, curr, i) => {
+        acc.push({
+            name: curr.querySelector(".projectTitle").value,
+            description: curr.querySelector(".description").value
+        });
+        return acc;
+    }, []);
+
+    const data = new FormData();
+    data.append("fname", fname);
+    data.append("lname", lname);
+    data.append("contact", contact);
+    data.append("description", description);
+    data.append("institutions", insititutions);
+    data.append("projects", projects);
+
+    fetch("/resumeapp/php/addInfo.php", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(data => data.json())
+    .then(data => {
+        if(data.success)
+            window.location = "/resumeapp/templates";
+        else
+            console.log("heyyy error");
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    
+
+});

@@ -10,12 +10,11 @@ const addProjectCard = () => {
             <div class="card-body">
                 <div class="form-group">
                     <small for="projectTitle">Project Title</small>
-                    <input type="text" class="form-control form-control-sm" class="projectTitle">
+                    <input type="text" class="form-control form-control-sm projectTitle">
                 </div>
                 <div class="form-group">
                     <small for="descrip">description</small>
-                    <textarea class="form-control form-control-sm" class="description">
-                    </textarea>
+                    <textarea class="form-control form-control-sm description"></textarea>
                 </div>     
                
             </div>
