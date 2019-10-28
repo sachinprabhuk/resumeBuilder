@@ -126,7 +126,7 @@ submit.addEventListener("click", e => {
         method: "POST",
         body: data
     })
-    .then(data => data.json())
+    .then(data => data.text())
     .then(data => {
         console.log(data);
         // if(data.auth===false)

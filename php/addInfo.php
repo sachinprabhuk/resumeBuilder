@@ -30,12 +30,13 @@
     }else
         $resp = array("success" => false, "message" => $conn->error);
 
-
-    $institution_array = json_decode($_POST['institutions'], true);
-    echo json_encode($_POST['institutions']);
+    $institution= $_POST['institutions'];
+    echo json_encode($institution);
+    $institution_array = json_decode( stripslashes($institution), TRUE);
+    echo json_encode($institution_array);
     exit;
 
-    foreach($institution_array as $currentData){
+    foreach($institution_array as $ey=>$currentData){
         $name= $currentData["name"];
         $description= $currentData["description"];
         $query= "INSERT INTO education VALUES('$email', '$name', '$description', '$descr', '$contact')";
