@@ -63,7 +63,18 @@
                 <button id="education-next" class="btn btn-primary">Next</button>
             </div>
             <div class="tab-pane fade" id="tab-projects">
-                <button class="btn btn-primary" id="final-submit">Submit</button>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="add-new-project">Add new</button>
+                    </div>
+                </div>
+                <br />
+                <form id="form-project" class="row container">
+                </form>
+                <br/>
+                <button class="btn btn-primary" id="final-submit">
+                    Submit
+                </button>
             </div>
         </div>
     </div>
@@ -74,5 +85,6 @@
 <script src="/resumeapp/lib/js/popper.min.js"></script>
 <script src="/resumeapp/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./index.js"></script>
+<script src="./project.js"></script>
 
 </html>

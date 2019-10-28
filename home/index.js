@@ -2,7 +2,7 @@ const personalNext = document.querySelector("#personal-next");
 const addEducation = document.querySelector("#add-new-education");
 const educationForm = document.querySelector("#form-education");
 const personalForm = document.querySelector("#form-personal");
-const projectsForm = document.querySelector("#form-projects");
+const projectsForm = document.querySelector("#form-project");
 
 let id = 0;
 const addEducationCard = () => {
@@ -103,10 +103,39 @@ submit.addEventListener("click", e => {
         });
         return acc;
     }, []);
-    console.log(insititutions);
+
+    // projects
+    const projects = Array.from(projectsForm.querySelectorAll(".card"))
+        .reduce((acc, curr, i) => {
+        acc.push({
+            name: curr.querySelector(".projectTitle").value,
+            description: curr.querySelector(".description").value
+        });
+        return acc;
+    }, []);
+
+    const data = new FormData();
+    data.append("fname", fname);
+    data.append("lname", lname);
+    data.append("contact", contact);
+    data.append("description", description);
+    data.append("institutions", insititutions);
+    data.append("projects", projects);
+
+    fetch("/resumeapp/php/addInfo.php", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(data => data.json())
+    .then(data => {
+        if(data.success)
+            window.location = "/resumeapp/templates";
+        else
+            console.log("heyyy error");
+    })
+    .catch(err => {
+        console.log(err);
+    })
     
-
-    console.log(fname, lname, contact, description)
-
 
 });
