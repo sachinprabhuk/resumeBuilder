@@ -1,6 +1,19 @@
 let id = 0;
+
 const addEducationCard = () => {
     id++;
+    if(id > 1) {
+        const firstCard = document.querySelector("div#education-1");
+        const newCard = firstCard.cloneNode(true);
+        newCard.querySelector(".institution").value = "";
+        newCard.querySelector(".description").value = "";
+        newCard.querySelector(".start").value = "";
+        newCard.querySelector(".end").value = "";
+        newCard.id = `education-${id}`
+        educationForm.appendChild(newCard);
+
+        return;
+    }
     educationForm.innerHTML +=
         `
         <div class="card col-sm-12 col-md-6" id='education-${id}'>
