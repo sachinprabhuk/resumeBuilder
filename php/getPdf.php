@@ -3,6 +3,7 @@
 $conn = new mysqli("localhost","root","", "resumeapp");
 
 $email = $_COOKIE['user'];
+//$type = $_GET['type'];
 
 $query = "SELECT * FROM personal WHERE email= '$email'";
 $result= $conn->query($query);

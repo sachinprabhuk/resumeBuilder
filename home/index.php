@@ -43,11 +43,27 @@
             </li>
             <li class="nav-item" >
                 <a 
+                id="pill-experience"
+                class="nav-link" data-toggle="tab" href="#tab-experience">
+                    Experience
+                </a>
+            </li>
+            <li class="nav-item" >
+                <a 
+                id="pill-achivement"
+                class="nav-link" data-toggle="tab" href="#tab-achivement">
+                    Achivement
+                </a>
+            </li>
+            <li class="nav-item" >
+                <a 
                 id="pill-projects"
                 class="nav-link" data-toggle="tab" href="#tab-projects">
                     Projects
                 </a>
             </li>
+           
+            
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active row" id="tab-personal" >
@@ -79,6 +95,30 @@
                     Submit
                 </button>
             </div>
+            <div class="tab-pane fade" id="tab-achivement">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="add-new-achivement">Add new</button>
+                    </div>
+                </div>
+                <br />
+                <form id="form-achivement" class="row container">
+                </form>
+                <br />
+                <button id="achivement-next" class="btn btn-primary">Next</button>
+            </div>
+            <div class="tab-pane fade" id="tab-experience">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="add-new-experience">Add new</button>
+                    </div>
+                </div>
+                <br />
+                <form id="form-experience" class="row container">
+                </form>
+                <br />
+                <button id="experience-next" class="btn btn-primary">Next</button>
+            </div>
         </div>
     </div>
 
@@ -90,5 +130,7 @@
 <script src="./index.js"></script>
 <script src="./education.js"></script>
 <script src="./project.js"></script>
+<script src="./achivements.js"></script>
+<script src="./experience.js"></script>
 <script src="./fetch-data.js"></script>
 </html>
