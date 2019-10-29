@@ -36,3 +36,17 @@ create table projects(
     description varchar(200),
     foreign key(email) references user_auth(email)
 );
+
+create table achivement(
+    email varchar(50),
+    title varchar(50),
+    description varchar(200),
+    foreign key(email) references user_auth(email)
+);
+
+create table experience(
+    email varchar(50),
+    title varchar(50),
+    description varchar(200),
+    foreign key(email) references user_auth(email)
+);
