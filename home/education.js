@@ -1,7 +1,7 @@
 let id = 0;
 const addEducationCard = () => {
     id++;
-    educationForm.innerHTML+=
+    educationForm.innerHTML += (
         `
         <div class="card col-sm-12 col-md-6" id='education-${id}'>
             <div class="card-body">
@@ -26,8 +26,8 @@ const addEducationCard = () => {
                 </div>
             </div>
         </div>
-        `
-    
+        `        
+    );
 }
 
 addEducationCard();
