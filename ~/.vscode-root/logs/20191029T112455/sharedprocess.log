@@ -1,0 +1,8 @@
+[2019-10-29 11:25:03.665] [sharedprocess] [info] main {"machineId":"fecfe6397ada4c5f52af1249951b211e582461979370b4d90584f4cc4e38c247"}
+[2019-10-29 11:25:43.621] [sharedprocess] [info] Starting to clean up unused language packs.
+[2019-10-29 11:25:45.781] [sharedprocess] [info] Installing extension: ms-vscode.cpptools
+[2019-10-29 11:26:52.466] [sharedprocess] [info] Downloaded extension: ms-vscode.cpptools /tmp/95e89a74-af91-475d-a9b8-08717898af8b
+[2019-10-29 11:27:01.689] [sharedprocess] [info] Extracted extension to /home/aditya/.vscode/extensions/.ms-vscode.cpptools-0.26.1: ms-vscode.cpptools
+[2019-10-29 11:27:01.691] [sharedprocess] [info] Renamed to /home/aditya/.vscode/extensions/ms-vscode.cpptools-0.26.1
+[2019-10-29 11:27:01.705] [sharedprocess] [info] Installation completed. ms-vscode.cpptools
+[2019-10-29 11:27:01.864] [sharedprocess] [info] Extensions installed successfully: ms-vscode.cpptools
