@@ -109,13 +109,16 @@ submit.addEventListener("click", e => {
     // education
     let insititutions = Array.from(educationForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
-        acc.push({
-            name: curr.querySelector(".institution").value,
-            description: curr.querySelector(".description").value,
-            sdate: curr.querySelector(".start").value,
-            edate: curr.querySelector(".end").value
+            let str = curr.querySelector(".institution").value;
+            if(str.replace(/\s/g, '').length !=0){
+                acc.push({
+                    name: curr.querySelector(".institution").value,
+                    description: curr.querySelector(".description").value,
+                    sdate: curr.querySelector(".start").value,
+                    edate: curr.querySelector(".end").value
 
-        });
+                });
+            }
         return acc;
     }, []);
 
@@ -124,21 +127,28 @@ submit.addEventListener("click", e => {
     // projects
     let projects = Array.from(projectsForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
-        acc.push({
-            name: curr.querySelector(".projectTitle").value,
-            description: curr.querySelector(".description").value
-        });
+            let str = curr.querySelector(".projectTitle").value;
+            if(str.replace(/\s/g, '').length !=0){
+                acc.push({
+                    name: curr.querySelector(".projectTitle").value,
+                    description: curr.querySelector(".description").value
+                });
+        }
         return acc;
+
     }, []);
 
     projects = JSON.stringify(projects);
 
     let achivement = Array.from(achivementForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
-        acc.push({
-            name: curr.querySelector(".title").value,
-            description: curr.querySelector(".description").value
-        });
+            let str = curr.querySelector(".title").value;
+            if(str.replace(/\s/g, '').length !=0){
+                acc.push({
+                    name: curr.querySelector(".title").value,
+                    description: curr.querySelector(".description").value
+                });
+            }    
         return acc;
     }, []);
 
@@ -146,10 +156,13 @@ submit.addEventListener("click", e => {
 
     let experience = Array.from(experienceForm.querySelectorAll(".card"))
         .reduce((acc, curr, i) => {
-        acc.push({
-            name: curr.querySelector(".title").value,
-            description: curr.querySelector(".description").value
-        });
+            let str = curr.querySelector(".title").value;
+            if(str.replace(/\s/g, '').length !=0){
+                acc.push({
+                    name: curr.querySelector(".title").value,
+                    description: curr.querySelector(".description").value
+                });
+            }
         return acc;
     }, []);
 
