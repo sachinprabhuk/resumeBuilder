@@ -182,7 +182,7 @@ submit.addEventListener("click", e => {
             window.location.replace("/resumeapp/login");
         else if(data.success===true){
             console.log("going to templates");
-            window.location = "/resumeapp/php/getPdf.php";
+            window.location = "/resumeapp/templates";
         }
         else
             console.log("heyyy error");
