@@ -4,6 +4,17 @@ const projectForm = document.querySelector("#form-project");
 let pid = 0;
 const addProjectCard = () => {
     pid++;
+    if(pid > 1) {
+        const firstCard = document.querySelector("div#project-1");
+        const newCard = firstCard.cloneNode(true);
+        newCard.querySelector(".projectTitle").value = "";
+        newCard.querySelector(".description").value = "";
+        newCard.id = `project-${pid}`;
+
+        projectForm.appendChild(newCard);
+
+        return;
+    }
     projectForm.innerHTML += (
         `
         <div class="card col-sm-12 col-md-6" id='project-${pid}'>
