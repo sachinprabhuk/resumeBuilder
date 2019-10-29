@@ -25,12 +25,12 @@ $content = '<br/><br/><h1>'.($result['fname']).' '. ($result['lname']).
 .'<h2 style="color:blue">Education</h2><br>';
 
 foreach($result1 as $ey => $value){
-    $content.= '<h3>'.$value['institution'].'</h3><br/>'.$value['description'].'<br/>';
+    $content.= '<h3>'.$value['institution'].'</h3><p>'.$value['description'].'</p><br/>';
 }
 
-$content.='<h2 style="color:blue">Project</h2><br>';
-foreach($result1 as $ey => $value){
-    $content.= '<h3>'.$value['institution'].'</h3><br/>'.$value['description'];
+$content.='<br/><h2 style="color:blue">Project</h2><br>';
+foreach($result2 as $ey => $value){
+    $content.= '<h3>'.$value['title'].'</h3><p>'.$value['description'].'</p><br/>';
 }
 
 require_once('./tcpdf/tcpdf.php');  
