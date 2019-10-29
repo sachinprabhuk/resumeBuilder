@@ -25,7 +25,7 @@ const addProjectCard = () => {
 
 addProjectCard();
 addproject.addEventListener("click", addProjectCard);
-
+console.log("HELLO");
 
 
 

@@ -15,8 +15,4 @@
         $resp = array("success" => false, "message" => "invalid username or passwrod");
 
     echo json_encode($resp);
-
-    //$resp = array("success" => true, "message" => "123");
-
-    //echo json_encode($resp);
 ?>

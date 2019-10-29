@@ -22,7 +22,7 @@ fetch("/resumeapp/php/getInfo.php", {
     method: "POST",
     body: email
 })
-.then(data=>data.text())
+.then(data=>data.json())
 .then(data => {
     console.log(data);
     if(data.success){

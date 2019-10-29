@@ -1384,5 +1384,19 @@
         }
     },
     "theme": "vs-dark",
-    "themeBackground": "#1e1e1e"
+    "themeBackground": "#1e1e1e",
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///opt/lampp/htdocs/resumeapp",
+            "backupPath": "/opt/lampp/htdocs/resumeapp/~/.vscode-root/Backups/e84f065656e9030221074894e9eca95e",
+            "uiState": {
+                "mode": 0,
+                "x": 171,
+                "y": 53,
+                "width": 1024,
+                "height": 715
+            }
+        },
+        "openedWindows": []
+    }
 }
