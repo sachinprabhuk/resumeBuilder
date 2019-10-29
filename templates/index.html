@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            max-width: 270px;
+            border: 2px dotted black;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+    <title>Resume Builder | template</title>
 </head>
 <body>
-    <h1>sachin</h1>
+    <h1 style="text-align: center;">
+            Select a Resume format
+    </h1>
+    <div class="container">
+        <img src="/resumeapp/img/type1.png" alt="type1" onclick="redirect('type1');" />
+        <img src="/resumeapp/img/type2.png" alt="type1" onclick="redirect('type2');" />
+    </div>
 </body>
+<script>
+
+    function redirect(templateType) {
+        window.location = `/resumeapp/getPdf.php?type=${templateType}`;
+    }
+
+
+</script>
 </html>
