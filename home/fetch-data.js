@@ -14,6 +14,38 @@ function getCookie(cname) {
     return "";
 }
 
+const insertPersonalData = result =>{
+        console.log(result.fname);
+        personalForm["firstname"].value= result.fname;
+        personalForm["lastname"].value= result.lname;
+        personalForm["contact"].value= result.contact;
+        personalForm["email"].value= result.email;
+        personalForm["description"].value= result.description;
+}
+
+const insertEducationalData = result =>{
+  let id= 1;
+  result.forEach((curr)=>{
+    addEducationCard();
+    let currentCard = document.querySelector('#education-'+id);
+    currentCard.querySelector(".institution").value = curr.institution;
+    currentCard.querySelector(".description").value = curr.description;
+    id++;
+  });
+  
+}
+
+const insertProjectsData = result =>{
+  let id= 1;
+  result.forEach((curr)=>{
+    addProjectCard();
+    let currentCard = document.querySelector('#project-'+id);
+    currentCard.querySelector(".projectTitle").value = curr.title;
+    currentCard.querySelector(".description").value = curr.description;
+    id++;
+  });
+  
+}
 const email = new FormData();
 
 email.append("email", getCookie('user'));
@@ -27,13 +59,14 @@ fetch("/resumeapp/php/getInfo.php", {
     console.log(data);
     if(data.success){
 
-        let result = data.result;
-        console.log(result.fname);
-        personalForm["firstname"].value= result.fname;
-        personalForm["lastname"].value= result.lname;
-        personalForm["contact"].value= result.contact;
-        personalForm["email"].value= result.email;
-        personalForm["description"].value= result.description;
+        let personalResult = data.personalResult;
+        let educationalResult = data.educationalResult;
+        let projectsResult = data.projectsResult;
+
+        insertPersonalData(personalResult);
+        insertEducationalData(educationalResult);
+        insertProjectsData(projectsResult);
+        
 
         
     }
