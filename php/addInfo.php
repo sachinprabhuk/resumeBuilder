@@ -63,14 +63,6 @@
     
     insertProject($email, $_POST['projects'], $conn);
 
-    echo json_encode($resp);
-   
-
-
-
-
-
-    
-     
+    echo json_encode($resp);     
 
 ?>

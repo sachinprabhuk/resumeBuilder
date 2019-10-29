@@ -24,7 +24,7 @@ const insertPersonalData = result =>{
 }
 
 const insertEducationalData = result =>{
-  let id= 1;
+  let id = 1;
   result.forEach((curr)=>{
     addEducationCard();
     let currentCard = document.querySelector('#education-'+id);
@@ -32,6 +32,10 @@ const insertEducationalData = result =>{
     currentCard.querySelector(".description").value = curr.description;
     id++;
   });
+
+  // no education fields previously entered, so add one
+  if(id == 1)
+    addEducationCard();
   
 }
 
@@ -45,6 +49,9 @@ const insertProjectsData = result =>{
     id++;
   });
   
+  // no projects fields previously entered, so add one
+  if(id == 1)
+    addProjectCard();
 }
 const email = new FormData();
 
@@ -56,7 +63,6 @@ fetch("/resumeapp/php/getInfo.php", {
 })
 .then(data=>data.json())
 .then(data => {
-    console.log(data);
     if(data.success){
 
         let personalResult = data.personalResult;
@@ -66,8 +72,10 @@ fetch("/resumeapp/php/getInfo.php", {
         insertPersonalData(personalResult);
         insertEducationalData(educationalResult);
         insertProjectsData(projectsResult);
-        
-
-        
+    } else {
+        // if no data was entered or something went wrong,
+        // we still want one card to be displayed, thuss........
+        addProjectCard();
+        addEducationCard()
     }
-});
+})

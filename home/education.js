@@ -1,17 +1,17 @@
 let id = 0;
 const addEducationCard = () => {
     id++;
-    educationForm.innerHTML += (
+    educationForm.innerHTML +=
         `
         <div class="card col-sm-12 col-md-6" id='education-${id}'>
             <div class="card-body">
                 <div class="form-group">
-                    <small for="insititution">institution</small>
+                    <small>institution</small>
                     <input type="text" class="form-control form-control-sm institution">
                 </div>
                 <div class="form-group">
-                <small for="descrip">description</small>
-                <input type="text" class="form-control form-control-sm description">
+                    <small >description</small>
+                    <input type="text" class="form-control form-control-sm description">
                 </div>     
                 <div class="form-group">
                     <small>year of study</small>
@@ -26,9 +26,7 @@ const addEducationCard = () => {
                 </div>
             </div>
         </div>
-        `        
-    );
+        `
 }
 
-addEducationCard();
 addEducation.addEventListener("click", addEducationCard);
